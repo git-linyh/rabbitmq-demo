@@ -1,0 +1,14 @@
+spring:
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
+    #开启发送确认机制，消息到达交换机后会有回调
+    publisher-confirm-type: CORRELATED
+    #可以确保消息在未被队列接收时返回
+    publisher-returns: true
+    listener:
+      simple:
+        # mq-》消费者手动确认
+        acknowledge-mode: manual
