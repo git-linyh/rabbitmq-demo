@@ -23,7 +23,8 @@ public class Swagger3Config implements WebMvcConfigurer {
         Profiles profiles = Profiles.of("dev");
         //通过environment.acceptsProfiles判断是否处在自己设定的环境中
         boolean flag = environment.acceptsProfiles(profiles);
-
+        //目前不用 保留写法 直接true
+        flag = true;
         return new Docket(DocumentationType.OAS_30)
                 .apiInfo(apiInfo())
                 .enable(flag)
